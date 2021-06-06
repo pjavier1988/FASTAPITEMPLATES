@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Listado de lenguajes de programación</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <h1 style="text-align: center;">Mi listado</h1>
+        <br/>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Lenguaje</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for id in listado %}
+                <tr scope="row">
+                    <td> {{listado[id]}}</td>
+                    <td> <a href="/eliminar/{{id}}"><button class="btn btn-danger">Eliminar</button></a> </td>
+                </tr>
+
+
+                {% endfor %}
+                <tr scope="row">
+                    <form method="POST" action="/agregar"> 
+                        <td> <input type="text" name="nuevolenguaje" required></td>
+                        <td > <button class="btn btn-primary" type="submit">Agregar Nuevo </button></td>
+
+
+                    </form>
+
+                </tr>
+
+
+            </tbody>
+            
+            
+            </form>
+        </table>
+    </body>
